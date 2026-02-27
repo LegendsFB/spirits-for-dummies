@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spirits for (very smart) Dummies</title>
+  <title>Spirits for Dummies (Hospitality Edition)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root{
       --bg:#f6f4f2; --card:#ffffff; --ink:#1f1f1f; --muted:#5a5a5a;
       --accent:#0f2e4b; --border:#e7e2de; --chip:#f1ece8;
-      --warn:#a35a00; --bad:#b00020;
+      --ok:#1d7a3a; --warn:#a35a00; --bad:#b00020;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
@@ -20,24 +20,42 @@
     .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
     h2{margin:.2rem 0 .7rem;color:var(--accent);font-size:1.3rem}
     h3{margin:.1rem 0 .55rem;font-size:1.05rem}
+    p{margin:.45rem 0}
     .muted{color:var(--muted)}
     .col-12{grid-column:span 12}
+    .col-8{grid-column:span 8}
     .col-6{grid-column:span 6}
     .col-4{grid-column:span 4}
-    @media (max-width:900px){.col-6,.col-4{grid-column:span 12}}
+    @media (max-width:900px){.col-8,.col-6,.col-4{grid-column:span 12}}
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 0}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:.35rem .55rem;border-radius:999px;font-size:.85rem;white-space:nowrap}
     .rule{border-left:4px solid var(--accent);padding:.7rem .85rem;background:#fff;border-radius:10px;border:1px solid var(--border);margin:.7rem 0 0}
     ul{margin:.4rem 0 0;padding-left:1.1rem}
     li{margin:.25rem 0}
-    .warn{color:var(--warn)}
-    .bad{color:var(--bad)}
+    details{border:1px solid var(--border);border-radius:12px;padding:.7rem .85rem;background:#fff}
+    summary{cursor:pointer;font-weight:800;color:var(--accent)}
+    .pill{display:inline-block;font-weight:800;padding:.18rem .5rem;border-radius:999px;font-size:.8rem;border:1px solid var(--border);background:#fff;margin-right:.35rem}
+    .ok{color:var(--ok);border-color:#cfe9d7;background:#f2fbf5}
+    .warn{color:var(--warn);border-color:#f0dfc5;background:#fff9f1}
+    .bad{color:var(--bad);border-color:#f2c6cf;background:#fff2f4}
+    .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.65rem}
+    button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:.55rem .75rem;cursor:pointer;font-weight:800}
+    button:hover{border-color:#d6ccc6}
+    .result{margin-top:.75rem;padding:.85rem .95rem;border:1px dashed #d6ccc6;border-radius:12px;background:#fff}
+    .result strong{color:var(--accent)}
     footer{text-align:center;padding:2rem 1rem;color:var(--muted)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#fff;border:1px solid var(--border);padding:.12rem .35rem;border-radius:6px;font-size:.9rem}
+    table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+    th,td{padding:.65rem .75rem;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+    th{background:#fbfaf9;color:var(--accent)}
+    tr:last-child td{border-bottom:none}
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Spirits for (very smart) Dummies</h1>
-  <p>Not “how to drink.” How to <b>describe, match, and sell</b> the 5 core spirits quickly and confidently.</p>
+  <h1>Spirits for Dummies (Hospitality Edition)</h1>
+  <p>Not “how to drink.” How to <b>describe, match, and sell</b> spirits for real service speed.</p>
 </header>
 
 <div class="wrap">
@@ -45,100 +63,178 @@
 
     <!-- Ontario Rule -->
     <section class="card col-12">
-      <h2>Important: Ontario Reality</h2>
+      <h2>Important: Ontario Reality (say it clearly)</h2>
       <div class="rule">
         <p class="bad"><b>Bourbon is NOT available in Ontario.</b></p>
-        <p>If a guest asks for bourbon, respond with:  
-        <b>“We don’t currently carry bourbon, but our rye / Canadian whisky fills a similar role in classic cocktails.”</b></p>
-        <p class="muted">No need to apologize exessively.</p>
+        <p><b>Default script:</b> “We don’t carry bourbon here. The closest profile we can do is with <b>whisky/rye</b> — do you want it <b>more spicy</b> or <b>more round</b>?”</p>
+        <p class="muted">Acknowledge + substitute + move forward. No apology tour.</p>
       </div>
     </section>
 
-    <!-- 60 second framework -->
+    <!-- Framework -->
     <section class="card col-12">
-      <h2>1-Minute Spirits Framework</h2>
+      <h2>1-Minute Spirits Framework (what you say, every time)</h2>
       <div class="rule">
         <p><b>Describe any spirit in 4 beats:</b></p>
-        <ul>
-          <li><b>Base:</b> grain / agave / sugarcane / neutral</li>
-          <li><b>Intensity:</b> light / aromatic / bold</li>
-          <li><b>Character:</b> citrus / herbal / spice / oak / smoke</li>
-          <li><b>Best use:</b> highball / citrus cocktail / spirit-forward</li>
-        </ul>
-        <p class="muted">If staff can say those four things, they can sell anything.</p>
+        <div class="chips">
+          <span class="chip"><b>1) Base</b>: grain / agave / sugarcane / botanicals</span>
+          <span class="chip"><b>2) Style</b>: clean / aromatic / aged</span>
+          <span class="chip"><b>3) Character</b>: citrus / herbal / spice / oak</span>
+          <span class="chip"><b>4) Best use</b>: highball / citrus cocktail / spirit-forward</span>
+        </div>
+        <p class="muted">Guests buy clarity and outcomes, not trivia. Keep it short + useful.</p>
       </div>
+    </section>
+
+    <!-- Rail vs Premium Rail (YOUR list) -->
+    <section class="card col-12">
+      <h2>Our Calls: Rail vs Premium Rail</h2>
+      <p class="muted">Service goal: offer the upgrade as a <b>clear benefit</b> (cleaner finish / more aroma / better in cocktail), not as a flex.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Spirit</th>
+            <th>Rail</th>
+            <th>Premium Rail</th>
+            <th>1-line difference (what to say)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Vodka</b></td>
+            <td>Ketel One</td>
+            <td>Grey Goose</td>
+            <td>“Ketel is crisp and clean; Goose is a cleaner, softer finish in a simple highball.”</td>
+          </tr>
+          <tr>
+            <td><b>Gin</b></td>
+            <td>Dillon’s</td>
+            <td>Roku</td>
+            <td>“Dillon’s is classic and clean; Roku is more aromatic and citrus/herb-forward.”</td>
+          </tr>
+          <tr>
+            <td><b>Tequila</b></td>
+            <td>1800</td>
+            <td>Casamigos Blanco</td>
+            <td>“1800 is classic agave; Casamigos reads rounder and more crowd-friendly in margaritas.”</td>
+          </tr>
+          <tr>
+            <td><b>Rum</b></td>
+            <td>Captain Morgan</td>
+            <td>Ron Zacapa 23</td>
+            <td>“Captain is straightforward; Zacapa is richer—caramel/vanilla depth for sipping or spirit-forward.”</td>
+          </tr>
+          <tr>
+            <td><b>Whisky</b></td>
+            <td>Alberta Premium 9 Year</td>
+            <td>Glenlivet 12</td>
+            <td>“Alberta Premium is spicier rye character; Glenlivet is softer, more honey/fruit and easy neat.”</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="rule">
+        <p><span class="pill warn">Staff rule</span> Don’t promise “less alcohol.” The upgrade is about <b>finish, aroma, and fit</b>.</p>
+      </div>
+    </section>
+
+    <!-- Knowledge blocks -->
+    <section class="card col-6">
+      <h2>Where Flavor Comes From</h2>
+      <ul>
+        <li><b>Raw material:</b> agave ≠ grain ≠ sugarcane.</li>
+        <li><b>Distillation:</b> cleaner vs more character (higher purity vs more congeners).</li>
+        <li><b>Aging:</b> oak adds vanilla/spice/toast; changes texture and finish.</li>
+        <li><b>Proof:</b> more aroma carry, can feel hotter if build isn’t balanced.</li>
+      </ul>
+      <div class="rule">
+        <p><span class="pill ok">Operator tip</span> Most “this tastes harsh” issues are <b>build + dilution + ice</b> problems before they’re brand problems.</p>
+      </div>
+    </section>
+
+    <section class="card col-6">
+      <h2>Translate Guest Language</h2>
+      <details open>
+        <summary>“Too strong”</summary>
+        <p>Offer a longer build (highball) or more dilution. Ask: <b>“Tall and refreshing, or short and bold?”</b></p>
+      </details>
+      <details style="margin-top:.7rem">
+        <summary>“Too sweet”</summary>
+        <p>Reduce liqueur/syrup, increase citrus/bitters, or switch to spirit-forward.</p>
+      </details>
+      <details style="margin-top:.7rem">
+        <summary>“Too harsh”</summary>
+        <p>Lower proof OR increase dilution/ice quality OR swap to cleaner style.</p>
+      </details>
+      <details style="margin-top:.7rem">
+        <summary>“I don’t like pine”</summary>
+        <p>They mean juniper-heavy gin. Offer Roku (more citrus/herb) or steer to vodka.</p>
+      </details>
     </section>
 
     <!-- Matching Cheats -->
     <section class="card col-12">
-      <h2>Matching Cheats (Practical, Not Theoretical)</h2>
-
+      <h2>Matching Cheats (the only section staff actually uses)</h2>
       <div class="grid">
-
         <div class="card col-6" style="box-shadow:none">
           <h3>Vodka</h3>
           <ul>
-            <li><b>Base:</b> neutral grain spirit</li>
-            <li><b>Intensity:</b> light</li>
-            <li><b>Use:</b> simple mixed drinks, espresso martinis, vodka sodas</li>
-            <li><b>Guest type:</b> “I don’t want strong flavour.”</li>
+            <li><b>Best use:</b> soda/juice, espresso-style cocktails, clean builds</li>
+            <li><b>When to recommend:</b> “I don’t want strong flavour.”</li>
+            <li><b>Upgrade:</b> Grey Goose for a cleaner finish in simple drinks</li>
           </ul>
         </div>
-
         <div class="card col-6" style="box-shadow:none">
           <h3>Gin</h3>
           <ul>
-            <li><b>Base:</b> neutral spirit + botanicals</li>
-            <li><b>Intensity:</b> aromatic</li>
-            <li><b>Use:</b> G&T, Tom Collins, Negroni</li>
-            <li><b>Guest type:</b> likes citrus, herbs, freshness</li>
+            <li><b>Best use:</b> G&T, Collins, Negroni, citrus/herbal cocktails</li>
+            <li><b>When to recommend:</b> likes fresh, aromatic profiles</li>
+            <li><b>Upgrade:</b> Roku when they want more aromatic/citrus-herb</li>
           </ul>
         </div>
-
         <div class="card col-6" style="box-shadow:none">
           <h3>Tequila</h3>
           <ul>
-            <li><b>Base:</b> agave</li>
-            <li><b>Intensity:</b> bright / earthy</li>
-            <li><b>Use:</b> Margarita, Paloma, tequila soda</li>
-            <li><b>Guest type:</b> likes citrus + clean structure</li>
+            <li><b>Best use:</b> Margarita, Paloma, tequila soda</li>
+            <li><b>When to recommend:</b> citrus + salt + bright structure</li>
+            <li><b>Upgrade:</b> Casamigos for crowd-friendly roundness</li>
           </ul>
         </div>
-
         <div class="card col-6" style="box-shadow:none">
           <h3>Rum</h3>
           <ul>
-            <li><b>Base:</b> sugarcane</li>
-            <li><b>Intensity:</b> light → rich (aged)</li>
-            <li><b>Use:</b> Daiquiri, Mojito, Cuba Libre</li>
-            <li><b>Guest type:</b> likes tropical, cola, dessert notes</li>
+            <li><b>Best use:</b> Daiquiri/Mojito, cola builds, tropical cocktails</li>
+            <li><b>When to recommend:</b> warm sweetness, dessert/tropical vibe</li>
+            <li><b>Upgrade:</b> Zacapa 23 for rich caramel/vanilla depth</li>
           </ul>
         </div>
-
         <div class="card col-12" style="box-shadow:none">
-          <h3>Whisky (Rye / Canadian)</h3>
+          <h3>Whisky (Rye/Canadian + Scotch option)</h3>
           <ul>
-            <li><b>Base:</b> grain + oak aging</li>
-            <li><b>Intensity:</b> bold, structured</li>
-            <li><b>Use:</b> Old Fashioned, Whisky Sour, Highball</li>
-            <li><b>Guest type:</b> wants depth and warmth</li>
+            <li><b>Best use:</b> Old Fashioned, Whisky Sour, highball</li>
+            <li><b>When to recommend:</b> depth, warmth, spirit-forward</li>
+            <li><b>Guest asks bourbon:</b> “Not available in Ontario — we’ll use whisky/rye.”</li>
+            <li><b>Upgrade:</b> Glenlivet 12 when they want softer/honey-fruit neat</li>
           </ul>
         </div>
-
       </div>
     </section>
 
-    <!-- Quick Translation Section -->
+    <!-- Interactive Drill -->
     <section class="card col-12">
-      <h2>Translate Guest Language</h2>
-      <ul>
-        <li><b>“Too strong”</b> → They want longer drink / more dilution.</li>
-        <li><b>“Too sweet”</b> → Reduce liqueur, increase citrus or bitters.</li>
-        <li><b>“Too harsh”</b> → Lower proof or change spirit style.</li>
-        <li><b>“Too piney”</b> → Choose less juniper-forward gin.</li>
-      </ul>
-      <div class="rule">
-        <p><b>Key mindset:</b> Every complaint is a build problem or a spirit-style mismatch.</p>
+      <h2>Pre-Shift Drill (2 minutes)</h2>
+      <p class="muted">Click once, practice the script, then go execute. One rep per shift beats “I’ll learn later.”</p>
+
+      <div class="btnrow">
+        <button id="btnPrompt">Generate a “table question”</button>
+        <button id="btnPitch">Generate a “15-second pitch”</button>
+        <button id="btnObjection">Generate a “guest objection”</button>
+        <button id="btnBuild">Generate a “build recommendation”</button>
+      </div>
+
+      <div id="out" class="result" aria-live="polite">
+        <strong>Tip:</strong> Keep it to 1 sentence + 1 suggestion. No TED Talk.
       </div>
     </section>
 
@@ -146,10 +242,107 @@
 </div>
 
 <footer>
-  Built for hospitality teams. Not for tasting notes competitions. 🥃
+  Built for hospitality teams. No sniffing contests. 🥃
 </footer>
+
+<script>
+  const out = document.getElementById("out");
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  // Your exact call list
+  const calls = {
+    vodka: { rail: "Ketel One", premium: "Grey Goose" },
+    gin: { rail: "Dillon’s", premium: "Roku" },
+    tequila: { rail: "1800", premium: "Casamigos Blanco" },
+    rum: { rail: "Captain Morgan", premium: "Ron Zacapa 23" },
+    whisky: { rail: "Alberta Premium 9 Year", premium: "Glenlivet 12" }
+  };
+
+  // Short, operational “what to say” lines
+  const pitchLines = [
+    {
+      spirit: "Vodka",
+      rail: calls.vodka.rail,
+      premium: calls.vodka.premium,
+      script: `Vodka is neutral and clean — it keeps the drink crisp and simple. If you want an upgrade, ${calls.vodka.premium} finishes cleaner in a soda/highball.`
+    },
+    {
+      spirit: "Gin",
+      rail: calls.gin.rail,
+      premium: calls.gin.premium,
+      script: `Gin is aromatic — botanicals, citrus, herbs. ${calls.gin.premium} is a great call if they want more aroma and less “piney” than classic styles.`
+    },
+    {
+      spirit: "Tequila",
+      rail: calls.tequila.rail,
+      premium: calls.tequila.premium,
+      script: `Tequila is agave-forward — bright with citrus builds. ${calls.tequila.premium} reads rounder and crowd-friendly in a Margarita or tequila soda.`
+    },
+    {
+      spirit: "Rum",
+      rail: calls.rum.rail,
+      premium: calls.rum.premium,
+      script: `Rum is sugarcane-based — it can be simple or rich. ${calls.rum.premium} brings caramel/vanilla depth if they’re sipping or doing spirit-forward.`
+    },
+    {
+      spirit: "Whisky",
+      rail: calls.whisky.rail,
+      premium: calls.whisky.premium,
+      script: `Whisky brings oak + warmth. If they ask for bourbon: it’s not available in Ontario — we’ll use whisky/rye. ${calls.whisky.premium} is softer and easy neat.`
+    }
+  ];
+
+  const tableQuestions = [
+    `Guest: “Vodka soda, but not boring.”`,
+    `Guest: “I want a gin drink but I hate pine.”`,
+    `Guest: “Tequila… but not a sugary margarita.”`,
+    `Guest: “We’re doing shots. What’s the safest call?”`,
+    `Guest: “I usually drink bourbon—what do you have?”`,
+    `Guest: “I want something spirit-forward, not a juice drink.”`
+  ];
+
+  const objections = [
+    { issue: "Guest: “That’s too strong.”", fix: "Offer a longer build (highball), more ice/dilution. Ask: “Tall and refreshing, or short and bold?”" },
+    { issue: "Guest: “That’s too sweet.”", fix: "Reduce liqueur/syrup, increase citrus/bitters, or switch to spirit-forward." },
+    { issue: "Guest: “That’s harsh.”", fix: "Increase dilution/ice quality or swap to cleaner style/premium. Check pour accuracy." },
+    { issue: "Guest: “I asked for bourbon.”", fix: "Script: “Bourbon isn’t available in Ontario. I can do that profile with whisky/rye — more spicy or more round?”" },
+    { issue: "Guest: “I hate pine.”", fix: `Use ${calls.gin.premium} or steer to vodka. Explain: “More citrus/herb, less juniper punch.”` }
+  ];
+
+  const buildRecs = [
+    { goal:"Refreshing", rec:"Highball: spirit + soda/tonic + citrus. Cold, tall, simple." },
+    { goal:"Not sweet", rec:"Drier build: spirit + citrus + minimal sweetener OR spirit-forward with bitters." },
+    { goal:"Spirit-forward", rec:"Short build: Old Fashioned / Negroni-style. Focus on dilution + ice." },
+    { goal:"Crowd-safe", rec:"Keep it familiar: vodka soda, G&T, tequila soda, whisky highball." },
+    { goal:"Sipping", rec:"Neat/rocks with premium call; offer a water back." }
+  ];
+
+  document.getElementById("btnPrompt").addEventListener("click", () => {
+    out.innerHTML = "<strong>Table question:</strong> " + pick(tableQuestions) +
+      "<br><span class='muted'>Your move: ask 1 clarifier, then recommend 1 spirit + 1 build.</span>";
+  });
+
+  document.getElementById("btnPitch").addEventListener("click", () => {
+    const p = pick(pitchLines);
+    out.innerHTML = "<strong>15-second pitch:</strong>" +
+      "<br><span class='muted'>Spirit:</span> " + p.spirit +
+      "<br><span class='muted'>Script:</span> “" + p.script + "”";
+  });
+
+  document.getElementById("btnObjection").addEventListener("click", () => {
+    const o = pick(objections);
+    out.innerHTML = "<strong>Guest objection:</strong> " + o.issue +
+      "<br><span class='muted'>Fix:</span> " + o.fix;
+  });
+
+  document.getElementById("btnBuild").addEventListener("click", () => {
+    const b = pick(buildRecs);
+    out.innerHTML = "<strong>Build recommendation:</strong>" +
+      "<br><span class='muted'>Goal:</span> " + b.goal +
+      "<br><span class='muted'>Recommendation:</span> " + b.rec +
+      "<br><span class='muted'>Then pick the spirit that fits. Offer premium only if the benefit is clear.</span>";
+  });
+</script>
 
 </body>
 </html>
-
-
