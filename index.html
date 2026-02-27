@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spirits for Dummies (Hospitality Edition)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      --bg:#f6f4f2; --card:#ffffff; --ink:#1f1f1f; --muted:#5a5a5a;
+      --accent:#0f2e4b; --border:#e7e2de; --chip:#f1ece8;
+      --ok:#1d7a3a; --warn:#a35a00; --bad:#b00020;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    header{background:var(--accent);color:#fff;padding:2.1rem 1rem 1.2rem;text-align:center}
+    header h1{margin:0;font-size:2.0rem}
+    header p{margin:.55rem auto 0;max-width:980px;opacity:.95}
+    .wrap{max-width:1100px;margin:1.4rem auto;padding:0 1rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.05rem 1.05rem;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
+    h2{margin:.15rem 0 .7rem;color:var(--accent);font-size:1.3rem}
+    h3{margin:.1rem 0 .55rem;font-size:1.05rem}
+    p{margin:.45rem 0}
+    .muted{color:var(--muted)}
+    .col-12{grid-column:span 12}
+    .col-8{grid-column:span 8}
+    .col-6{grid-column:span 6}
+    .col-4{grid-column:span 4}
+    .col-3{grid-column:span 3}
+    @media (max-width:900px){.col-8,.col-6,.col-4,.col-3{grid-column:span 12}}
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 0}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:.35rem .55rem;border-radius:999px;font-size:.85rem;white-space:nowrap}
+    .rule{border-left:4px solid var(--accent);padding:.7rem .85rem;background:#fff;border-radius:10px;border:1px solid var(--border);margin:.7rem 0 0}
+    ul{margin:.4rem 0 0;padding-left:1.15rem}
+    li{margin:.25rem 0}
+    details{border:1px solid var(--border);border-radius:12px;padding:.7rem .85rem;background:#fff}
+    summary{cursor:pointer;font-weight:700;color:var(--accent)}
+    .pill{display:inline-block;font-weight:700;padding:.18rem .5rem;border-radius:999px;font-size:.8rem;border:1px solid var(--border);background:#fff;margin-right:.35rem}
+    .ok{color:var(--ok);border-color:#cfe9d7;background:#f2fbf5}
+    .warn{color:var(--warn);border-color:#f0dfc5;background:#fff9f1}
+    .bad{color:var(--bad);border-color:#f2c6cf;background:#fff2f4}
+    .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.65rem}
+    button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:.55rem .75rem;cursor:pointer;font-weight:700}
+    button:hover{border-color:#d6ccc6}
+    .result{margin-top:.75rem;padding:.85rem .95rem;border:1px dashed #d6ccc6;border-radius:12px;background:#fff}
+    .result strong{color:var(--accent)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#fff;border:1px solid var(--border);padding:.12rem .35rem;border-radius:6px;font-size:.9rem}
+    footer{text-align:center;padding:2.2rem 1rem 2.6rem;color:var(--muted);font-size:.95rem}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Spirits for Dummies (Hospitality Edition)</h1>
+  <p>Not “how to drink.” How to <b>serve, describe, and sell</b> the 5 main spirits fast: vodka, tequila, rum, whisky, gin.</p>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- 60-second baseline -->
+    <section class="card col-12">
+      <h2>1-minute Spirits Framework (what you say, every time)</h2>
+      <div class="rule">
+        <p><b>Describe any spirit in 4 beats:</b></p>
+        <div class="chips">
+          <span class="chip"><b>1) Base</b>: what it’s made from</span>
+          <span class="chip"><b>2) Style</b>: clean / aromatic / aged</span>
+          <span class="chip"><b>3) Texture</b>: light / round / oily</span>
+          <span class="chip"><b>4) Flavor</b>: sweet / spice / herbal / smoke</span>
+        </div>
+        <p class="muted">Guests don’t need a lecture. They need a confident map.</p>
+      </div>
+    </section>
+
+    <!-- Service standards -->
+    <section class="card col-6">
+      <h2>Service Standards</h2>
+      <h3>Core pour rules</h3>
+      <ul>
+        <li><b>Ask the format:</b> “Straight, rocks, or cocktail?”</li>
+        <li><b>Confirm preference:</b> “More smooth or more character?”</li>
+        <li><b>Ice matters:</b> big ice = smoother; crushed = colder/faster dilution.</li>
+        <li><b>Don’t ‘free-pour’ advice:</b> match the guest to a choice and move on.</li>
+      </ul>
+      <div class="rule">
+        <p><span class="pill ok">Pro move</span> When a guest says “smooth,” translate it: lower burn + lower bite + clean finish.</p>
+      </div>
+
+      <h3 style="margin-top:1rem">Fast “house language”</h3>
+      <ul>
+        <li><b>Clean:</b> neutral, minimal flavor.</li>
+        <li><b>Bright:</b> citrus/herbal lift.</li>
+        <li><b>Round:</b> softer, sweeter impression.</li>
+        <li><b>Grippy:</b> spice/wood/tannin feel (mostly aged spirits).</li>
+      </ul>
+    </section>
+
+    <!-- Guest questions -->
+    <section class="card col-6">
+      <h2>Guest Questions (scriptable)</h2>
+
+      <details open>
+        <summary>“What’s the smoothest?”</summary>
+        <p>Ask: <b>“Smooth like clean, or smooth like sweet?”</b></p>
+        <ul>
+          <li><b>Clean-smooth:</b> vodka or a clean blanco tequila.</li>
+          <li><b>Sweet-smooth:</b> aged rum or a softer whisky.</li>
+        </ul>
+      </details>
+
+      <details style="margin-top:.7rem">
+        <summary>“I want something with flavour, not harsh.”</summary>
+        <p>Steer toward <b>aromatic</b> spirits (gin) or <b>aged</b> (rum/whisky) and avoid overproof.</p>
+      </details>
+
+      <details style="margin-top:.7rem">
+        <summary>“What should I order?”</summary>
+        <p>Ask one question: <b>“Fresh/bright or rich/round?”</b> Then pick confidently.</p>
+      </details>
+    </section>
+
+    <!-- Upselling -->
+    <section class="card col-8">
+      <h2>Upselling Without Being Weird</h2>
+      <div class="rule">
+        <p><b>Rule:</b> Upgrade by improving the experience (smoothness, aroma, finish), not by flexing price.</p>
+        <p class="muted">The guest buys confidence + outcome, not your trivia.</p>
+      </div>
+
+      <h3>3 clean upgrade lines</h3>
+      <ul>
+        <li><b>Better version:</b> “If you like that, this one is the same style but noticeably smoother.”</li>
+        <li><b>Cocktail upgrade:</b> “That cocktail gets cleaner/brighter with this spirit.”</li>
+        <li><b>Occasion:</b> “If it’s a celebration, this pours more ‘special’ without getting intense.”</li>
+      </ul>
+
+      <h3 style="margin-top:1rem">The 2-question spirit sale</h3>
+      <ul>
+        <li>Q1: “Cocktail or spirit-forward?”</li>
+        <li>Q2: “Clean & crisp or bold & flavorful?”</li>
+      </ul>
+    </section>
+
+    <!-- Quick matching -->
+    <section class="card col-4">
+      <h2>Quick Matching Cheats</h2>
+      <ul>
+        <li><b>Vodka:</b> clean + neutral → simple mixed drinks.</li>
+        <li><b>Gin:</b> botanical → citrus, tonic, herb-forward cocktails.</li>
+        <li><b>Tequila:</b> agave → lime, salt, bright cocktails.</li>
+        <li><b>Rum:</b> sugarcane → tropical, cola, dessert notes.</li>
+        <li><b>Whisky:</b> grain + oak → bitters, citrus, spirit-forward builds.</li>
+      </ul>
+      <div class="rule">
+        <p><span class="pill warn">Ontario note</span> “Bourbon” may be unavailable; use <b>rye / Canadian whisky</b> as the default whisky call unless specified.</p>
+      </div>
+    </section>
+
+    <!-- The 5 spirits (mini playbooks) -->
+    <section class="card col-12">
+      <h2>The 5 Main Spirits (staff-ready quick scripts)</h2>
+
+      <div class="grid">
+        <div class="card col-6" style="box-shadow:none">
+          <h3>Vodka</h3>
+          <p><b>Say:</b> Clean and neutral—built to disappear into the mixer and let flavours shine.</p>
+          <p><b>Use:</b> soda, juice, coffee cocktails; guests who want “no flavour, no drama.”</p>
+          <p class="muted"><b>Upsell path:</b> “cleaner finish” / “smoother texture.”</p>
+        </div>
+
+        <div class="card col-6" style="box-shadow:none">
+          <h3>Gin</h3>
+          <p><b>Say:</b> Aromatic and botanical—juniper plus citrus/herbs; it’s basically perfume you can manage.</p>
+          <p><b>Use:</b> G&T, Tom Collins, Negroni; guests who like fresh, herbal, or crisp.</p>
+          <p class="muted"><b>Upsell path:</b> “more citrus-forward” vs “more juniper-forward.”</p>
+        </div>
+
+        <div class="card col-6" style="box-shadow:none">
+          <h3>Tequila</h3>
+          <p><b>Say:</b> Bright agave flavour—blanco is fresh and crisp; aged styles get rounder and softer.</p>
+          <p><b>Use:</b> Margarita, Paloma, tequila soda; guests who like citrus + clean bite.</p>
+          <p class="muted"><b>Upsell path:</b> blanco → “cleaner”; reposado → “smoother/rounder.”</p>
+        </div>
+
+        <div class="card col-6" style="box-shadow:none">
+          <h3>Rum</h3>
+          <p><b>Say:</b> Sugarcane spirit—can be light and clean or rich and caramel-like if aged.</p>
+          <p><b>Use:</b> Daiquiri, Mojito, rum old fashioned, Cuba Libre; guests who like warm sweetness.</p>
+          <p class="muted"><b>Upsell path:</b> white → “clean”; aged → “vanilla/caramel depth.”</p>
+        </div>
+
+        <div class="card col-12" style="box-shadow:none">
+          <h3>Whisky (no bourbon assumption)</h3>
+          <p><b>Say:</b> Grain spirit with oak—richer, spicier, and more structured; great spirit-forward.</p>
+          <p><b>Use:</b> Old Fashioned, Whisky Sour, highball; guests who want depth and warmth.</p>
+          <p class="muted"><b>Ontario note:</b> Default to rye/Canadian whisky when “bourbon” isn’t available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-shift drill -->
+    <section class="card col-12">
+      <h2>Pre-Shift Drill (2 minutes)</h2>
+      <p class="muted">Click once, practice the script, then go sell spirits like you mean it.</p>
+
+      <div class="btnrow">
+        <button id="btnPrompt">Generate a “table question”</button>
+        <button id="btnPitch">Generate a “15-second spirit description”</button>
+        <button id="btnObjection">Generate a “guest objection”</button>
+      </div>
+
+      <div id="out" class="result" aria-live="polite">
+        <strong>Tip:</strong> One rep per shift builds confidence faster than “I’ll learn later.”
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  Built for hospitality teams. No sniffing contests. 🥃
+</footer>
+
+<script>
+  const out = document.getElementById("out");
+
+  const tableQuestions = [
+    "Guest: “I want something smooth. What do you recommend?”",
+    "Guest: “Vodka soda, but make it… less boring.”",
+    "Guest: “Tequila. Not the harsh stuff.”",
+    "Guest: “I usually drink bourbon… what’s closest here?”",
+    "Guest: “I want a gin drink that isn’t too piney.”",
+    "Guest: “What’s a good sipping rum?”"
+  ];
+
+  const pitches = [
+    { spirit:"Vodka", line:"Clean and neutral—built to disappear into the mixer. Great if you want ‘smooth and simple’ without strong flavour." },
+    { spirit:"Gin", line:"Aromatic and botanical—juniper with citrus and herbs. Crisp, bright, and perfect in a G&T or anything citrusy." },
+    { spirit:"Tequila", line:"Agave-forward and bright—blanco is fresh and snappy, aged styles are rounder and smoother. Margarita’s best friend." },
+    { spirit:"Rum", line:"Sugarcane spirit—can be light and clean or richer with vanilla/caramel when aged. Ideal for tropical or cola-style drinks." },
+    { spirit:"Whisky", line:"Grain plus oak—warmer, spicier, and more structured. Best for spirit-forward classics like an Old Fashioned or Sour." }
+  ];
+
+  const objections = [
+    "Guest: “That’s too harsh.” (They want lower burn / smoother finish.)",
+    "Guest: “Too sweet.” (They want drier build / less liqueur / more citrus.)",
+    "Guest: “Too strong.” (They want longer drink / more dilution / highball style.)",
+    "Guest: “I don’t like that pine taste.” (They mean juniper-heavy gin.)",
+    "Guest: “I want whisky but not smoky.” (They want non-peated style.)"
+  ];
+
+  function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  document.getElementById("btnPrompt").addEventListener("click", () => {
+    out.innerHTML = "<strong>Table question:</strong> " + pick(tableQuestions) +
+      "<br><span class='muted'>Your move: ask 1 clarifier, then recommend 1 option.</span>";
+  });
+
+  document.getElementById("btnPitch").addEventListener("click", () => {
+    const p = pick(pitches);
+    out.innerHTML = "<strong>15-second description:</strong>" +
+      "<br><span class='muted'>Spirit:</span> " + p.spirit +
+      "<br><span class='muted'>Script:</span> “" + p.line + "”";
+  });
+
+  document.getElementById("btnObjection").addEventListener("click", () => {
+    out.innerHTML = "<strong>Guest objection:</strong> " + pick(objections) +
+      "<br><span class='muted'>Translate their words into a fix (build, style, or spirit choice).</span>";
+  });
+</script>
+</body>
+</html>
